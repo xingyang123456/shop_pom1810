@@ -1,0 +1,14 @@
+
+dubbo:
+  application:
+    name: shop_back
+  registry:
+    address: zookeeper://192.168.130.128:2181
+  consumer:
+    check: false
+server:
+  port: 8080
+spring:
+  thymeleaf:
+    cache: false
+

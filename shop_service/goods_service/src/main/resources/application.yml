@@ -1,0 +1,32 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123
+    url: jdbc:mysql:///shop_1810
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      min-idle: 5
+      max-active: 100
+      max-wait: 60000
+      initial-size: 5
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin
+        allow: 127.0.0.1
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+server:
+  port: 9090
+dubbo:
+  protocol:
+    port: 20880
+    name: dubbo
+  application:
+    name: goods_service
+  registry:
+    address: zookeeper://192.168.130.128:2181
